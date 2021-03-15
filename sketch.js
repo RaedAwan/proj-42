@@ -57,7 +57,7 @@ function draw() {
   if(frameCount % 80 === 0){
     var banana = createSprite(600,250,40,10);
     banana.y = random(120,200);
-    banana.addImage(banana);
+    banana.addImage(bananaImage);
     banana.scale = 0.5;
     banana.velocityX = -4;
 
@@ -92,16 +92,16 @@ text("Game Over", 300,220);
     player.collide(ground);
     spawnFood();
     spawnObstacles();
-  }
+  
 
   drawSprites();
-
+  }
   function spawnFood(){
     //write code here to spawn the food
     if(frameCount % 80 === 0){
       var banana = createSprite(600,250,40,10);
       banana.y = random(120,200);
-      banana.addImage(banana);
+      banana.addImage(bananaImage);
       banana.scale = 0.5;
       banana.velocityX = -4;
 
@@ -119,13 +119,13 @@ function spawnObstacles(){
   if(frameCount % 80 === 0){
     var obstacles = createSprite(600,250,40,10);
     obstacles.y = random(120,200);
-    obstacles.addImage(obstacleImage);
-    obstacle.scale = 0.5;
-    obstacle.velocityX = -4;
+    obstacles.addImage(obstacle_img);
+    obstacles.scale = 0.5;
+    obstacles.velocityX = -4;
 
-    obstacle.lifetime = 300;
-    player.depth = banana.depth + 1;
-    obstaclesGroup.add(obstacle);
+    obstacles.lifetime = 300;
+    player.depth = obstacles.depth + 1;
+    obstaclesGroup.add(obstacles);
   }
   if(obstaclesGroup.isTouching(player)){
     obstaclesGroup.destroyEach();
