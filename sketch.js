@@ -93,7 +93,7 @@ text("Game Over", 300,220);
     spawnFood();
     spawnObstacles();
   
-
+  }
   drawSprites();
   }
   function spawnFood(){
@@ -112,7 +112,7 @@ text("Game Over", 300,220);
     
 
 }
-}
+
 
 
 function spawnObstacles(){
@@ -124,7 +124,7 @@ function spawnObstacles(){
     obstacles.velocityX = -4;
 
     obstacles.lifetime = 300;
-    player.depth = obstacles.depth + 1;
+    //player.depth = obstacles.depth + 1;
     obstaclesGroup.add(obstacles);
   }
   if(obstaclesGroup.isTouching(player)){
